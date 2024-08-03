@@ -46,8 +46,8 @@ export const getUserListings = async (req,res,next) => {
 
     try {
         const listings = await Listing.find({ userRef: req.params.id }); // only find those that have that id
-        res.status(200).json(listings);
-    } catch (error) {
-        next(error);
+        res.status(200).json(listings);                                 //userRef contain the id same as of user id.
+    } catch (error) {             //if multiple listings are created by a user,all the userRef field will have same id, 
+        next(error);                //that is id of user 
     }
 }
