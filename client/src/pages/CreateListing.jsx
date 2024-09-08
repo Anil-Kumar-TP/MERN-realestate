@@ -102,7 +102,7 @@ export default function CreateListing () {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ ...formData, userRef: currentUser._id }), //to konw which user created it
+                body: JSON.stringify({ ...formData, userRef: currentUser._id }), //to know which user created it
             });
             const data = await res.json();
             setLoading(false);
